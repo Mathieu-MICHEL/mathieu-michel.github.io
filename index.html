@@ -1,8 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mathieu MICHEL – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #222;
+      --accent: #0099ff;
+      --bg: #fafbfc;
+      --radius: 12px;
+    }
+    body {
+      background: var(--bg);
+      font-family: system-ui, sans-serif;
+      color: var(--primary);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      max-width: 430px;
+      width: 100%;
+      margin: 2rem 0;
+    }
+    h1 {
+      font-size: 2.1rem;
+      margin-bottom: .2em;
+    }
+    h2 {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      margin-top: 0;
+      line-height: 1.5;
+    }
+    .projects {
+      list-style: none;
+      padding: 0;
+    }
+    .projects li {
+      margin-bottom: 1.1em;
+      background: #f5faff;
+      padding: 0.7em 1em;
+      border-radius: var(--radius);
+    }
+    .projects a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact {
+      margin-top: 2.5em;
+      font-size: 1em;
+    }
+    .contact a {
+      color: var(--primary);
+      text-decoration: underline;
+      margin-right: 1em;
+    }
+    @media (max-width: 500px) {
+      .container {
+        padding: 1em;
+        margin: 0.5em;
+      }
+    }
+  </style>
+</head>
 <body>
-<h1>Mathieu MICHEL</h1>
-<p>This is my personal page. I am centralizing some activities here, and explore basic webdesign for the sake of it.</p>
-<p>More technical work and code available at <a href="https://github.com/Mathieu-MICHEL">https://github.com/Mathieu-MICHEL</a>.</p>
+  <div class="container">
+    <h1>Mathieu MICHEL</h1>
+    <p>This is my personal page. I am centralizing some activities here, and explore basic webdesign for the sake of it.</p>
+    <p>More technical work and code available at <a href="https://github.com/Mathieu-MICHEL">https://github.com/Mathieu-MICHEL</a>.</p>
+
+    <h2>Projects</h2>
+    <ul class="projects">
+      <li>
+        <a href="https://lagoslmis.com" target="_blank">Lagos State Labour Market Information System</a><br>
+        <small>A project of public data and public-private exchange around Employment Information, mandated by Lagos State with support from GIZ.</small>
+      </li>
+      <li>
+        <a href="https://elearning.lsetf.ng" target="_blank">LSETF eLearning</a><br>
+        <small>Maintaining and developping a lean Moodle eLearning targetted at Lagosian jobseekers.</small>
+      </li>
+      <!-- Add more projects as needed -->
+    </ul>
+
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="mailto:mathieu-michel@gmx.fr">Email</a>
+      <a href="www.linkedin.com/in/michel-gizxlsetf" target="_blank">LinkedIn</a>
+      <!-- Add your socials or remove as you like -->
+    </div>
+  </div>
 </body>
 </html>
