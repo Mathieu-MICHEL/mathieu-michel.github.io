@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Mathieu MICHEL – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
       --primary: #171923;
@@ -202,7 +204,7 @@
     <p>This is my personal page. I am centralizing some activities here, and trying out basic webdesign.
 
     More technical work and code available at <a href="https://github.com/Mathieu-MICHEL">https://github.com/Mathieu-MICHEL</a>.</p>
-    <a class="button-accent" href="MICHEL_ShortCV_202505.pdf" target="_blank">Download CV</a>
+    <a class="button-accent" href="MICHEL_Resume_202505.pdf" target="_blank">Download Resume</a>
     </p>
     <!-- SKILLS -->
     <div class="section-title">Skills</div>
@@ -232,6 +234,10 @@
         <a href="https://elearning.lsetf.ng" target="_blank">LSETF eLearning</a><br>
         <small>Maintaining and developping a lean Moodle eLearning targetted at Lagosian jobseekers.</small>
       </li>
+      <li>
+        <a href="https://randomstudiorw.com" target="_blank">Random STUDIO</a><br>
+        <small>Supporting a Rwandan interior design business.</small>
+      </li>
       <!-- Add more projects as needed -->
     </ul>
 
@@ -244,30 +250,36 @@
     </ul>
 
     <!-- CONTACT -->
-    <div class="section-title">Contact</div>
     <div class="contact">
-      <a href="mailto:mathieu-michel@gmx.fr">Email</a>
-      <a href="https://www.linkedin.com/in/michel-gizxlsetf" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Mathieu-MICHEL" target="_blank">GitHub</a>
+      <a href="mailto:mathieu-michel@gmx.fr"><i class='fas fa-envelope-open' style='font-size:24px'></i></a>
+      <a href="https://www.linkedin.com/in/michel-gizxlsetf"><i class='fab fa-linkedin' style='font-size:24px'></i></a>
+      <a href="https://github.com/Mathieu-MICHEL"><i class="fab fa-github" style="font-size:24px"></i></a>
     </div>
-  </div>
 
-  <script>
-    // Animate skill bars on page load
-    document.querySelectorAll('.skill-bar').forEach(function(bar) {
-      setTimeout(function(){
-        bar.style.width = bar.getAttribute('data-level') + '%';
-      }, 250);
-    });
-    // Blog preview toggle
-    document.querySelectorAll('.toggle-preview').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        const preview = btn.nextElementSibling;
-        const expanded = preview.style.display === 'block';
-        document.querySelectorAll('.blog-preview').forEach(div => div.style.display = 'none');
-        if (!expanded) preview.style.display = 'block';
+<script>
+  // Animate skill bars
+  document.querySelectorAll('.skill-bar').forEach(function(bar) {
+    setTimeout(function() {
+      bar.style.width = bar.getAttribute('data-level') + '%';
+    }, 250);
+  });
+
+  // Toggle blog preview (only one open at a time)
+  document.querySelectorAll('.toggle-preview').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const preview = btn.nextElementSibling;
+      const isVisible = preview.style.display === 'block';
+
+      // Hide all previews
+      document.querySelectorAll('.blog-preview').forEach(div => {
+        div.style.display = 'none';
       });
+
+      // Toggle this one
+      preview.style.display = isVisible ? 'none' : 'block';
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
