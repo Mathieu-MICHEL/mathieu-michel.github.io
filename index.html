@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mathieu MICHEL – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Mathieu MICHEL – Portfolio</title>
+  <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
       --primary: #171923;
@@ -14,58 +14,146 @@
       --card-bg: #fff;
       --radius: 18px;
       --shadow: 0 4px 24px 0 rgba(22,160,133,.07);
-      --skill-bg: #e3e9f1;
     }
-    html { box-sizing: border-box;}
+    html { box-sizing: border-box; scroll-behavior: smooth; }
     *, *:before, *:after { box-sizing: inherit; }
-
     body {
       background: var(--bg);
       font-family: 'Segoe UI', system-ui, sans-serif;
       color: var(--primary);
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
+      padding-top: 100px;
+      padding-bottom: 80px;
     }
-    .container {
-      background: var(--card-bg);
-      padding: 2.5rem 2.2rem 2rem 2.2rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      max-width: 600px;
+    header, footer {
+      position: fixed;
       width: 100%;
-      margin: 2rem 0 2rem 0;
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      padding: 1rem;
+    }
+    header {
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav a {
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    nav a.active {
+      border-bottom: 2px solid var(--accent);
+    }
+    footer {
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+      bottom: 0;
+      font-size: 0.9rem;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
+    .footer-links a {
+      margin: 0 0.8em;
+      font-size: 1.07em;
+      color: var(--primary);
+      text-decoration: underline;
+      opacity: 0.88;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+      opacity: 1;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: calc(100vh - 180px);
+      padding: 0 5%;
+      background: var(--bg);
+      box-sizing: border-box;
+    }
+    .hero-text {
+      width: 60%;
+    }
+    .hero-image {
+      width: 35%;
+      aspect-ratio: 1/1;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      box-shadow: 0 2px 16px 0 rgba(22,160,133,.15);
+      border-radius: var(--radius);
       border: 4px solid var(--bg);
-      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 16px 0 rgba(22,160,133,.15);
       background: #eee;
-      display: block;
     }
-    h1 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin: .25em 0 .08em 0;
-      letter-spacing: -1px;
-      text-align: center;
-    }
+    
+      h1 { 
+        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
+        font-size: 30px; 
+        font-style: normal; 
+        font-variant: small-caps; 
+        font-weight: 100; 
+        line-height: 36px; 
+        margin: .25em 0 .08em 0;
+        letter-spacing: -1px;
+        text-align: left;} 
+      h3 { 
+        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
+        font-size: 14px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700; 
+        line-height: 15.4px; } 
+      p { 
+        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
+        font-size: 14px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 20px; } 
+      blockquote { 
+        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
+        font-size: 21px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 30px; } 
+      pre { 
+        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
+        font-size: 13px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 18.5667px; }
+
     .intro {
-      font-size: 1.15rem;
-      margin: 0 0 1.2em 0;
-      text-align: center;
+      font-size: 1rem;
+      margin: 1em 0;
       line-height: 1.6;
+      text-align: left;
     }
     .button-accent {
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
       background: var(--accent);
       color: #fff;
       border: none;
@@ -73,7 +161,7 @@
       padding: 0.6em 1.5em;
       font-size: 1.08rem;
       font-weight: 500;
-      margin: 1em 0 2em 0;
+      margin: 1em 0;
       cursor: pointer;
       transition: background 0.2s, transform 0.15s;
       box-shadow: 0 2px 8px 0 rgba(22,160,133,.08);
@@ -88,198 +176,155 @@
       font-size: 1.15rem;
       color: var(--accent);
       font-weight: 600;
-      margin: 1.7em 0 0.6em 0;
-      align-self: flex-start;
+      margin: 2em 0 0.6em 5%;
       letter-spacing: 1px;
       text-transform: uppercase;
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
+      font-style: normal; 
+      font-variant: small-caps; 
+      font-weight: 100; 
+      line-height: 36px; 
     }
-    .skills-list {
+    section {
+      margin-bottom: 4rem;
+    }
+    section#proj {
+      background-color: #f0f8f7;
+      padding: 2rem 0;
+    }
+    .projects {
       width: 100%;
+      list-style: none;
+      padding: 0;
       margin: 0;
-      padding: 0;
-      list-style: none;
-      margin-bottom: 1.2em;
-    }
-    .skill-item {
-      margin-bottom: 1.2em;
-    }
-    .skill-label {
-      font-weight: 500;
-      font-size: 1.05em;
-      margin-bottom: .3em;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
     }
-    .skill-bar-bg {
-      background: var(--skill-bg);
-      border-radius: 9px;
-      height: 13px;
-      width: 100%;
-      overflow: hidden;
-    }
-    .skill-bar {
-      background: linear-gradient(90deg, var(--accent), #43e6af);
-      height: 13px;
-      border-radius: 9px 0 0 9px;
-      width: 0;
-      transition: width 1.3s cubic-bezier(0.77,0,0.175,1);
-    }
-    .projects, .blog-list {
-      width: 100%;
-      padding: 0;
-      list-style: none;
-      margin: 0 0 1em 0;
-    }
-    .projects li, .blog-list li {
-      margin-bottom: 1em;
-      background: #f8fdfc;
-      padding: 1em 1.2em;
+    .projects li {
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+      width: 90%;
+      max-width: 900px;
+      margin-bottom: 1.5em;
+      background: var(--card-bg);
+      padding: 1.5em;
       border-radius: var(--radius);
       box-shadow: 0 2px 6px rgba(22,160,133,.05);
-      transition: box-shadow 0.2s;
-      position: relative;
     }
-    .projects a, .blog-list a {
+    .projects a {
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
       color: var(--accent);
       font-weight: 600;
       text-decoration: none;
-      transition: color 0.2s;
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
     }
-    .projects a:hover, .blog-list a:hover {
-      color: #13896b;
-      text-decoration: underline;
-    }
-    .blog-preview {
-      display: none;
-      margin-top: .4em;
-      font-size: .98em;
-      color: #444;
-      line-height: 1.5;
-    }
-    .blog-list .toggle-preview {
-      background: none;
-      border: none;
-      color: var(--accent);
-      cursor: pointer;
-      font-size: .97em;
-      margin-left: 0.3em;
-      padding: 0;
-      font-weight: 500;
-      text-decoration: underline;
-    }
-    .contact {
-      margin-top: 2em;
+    .about, .skills {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
-      width: 100%;
     }
-    .contact a {
-      color: var(--primary);
-      text-decoration: underline;
-      margin: 0 0.8em;
-      font-size: 1.07em;
-      opacity: 0.88;
-      transition: color 0.2s;
-    }
-    .contact a:hover {
-      color: var(--accent);
-      opacity: 1;
-    }
-    @media (max-width: 680px) {
-      .container {
-        padding: 1.1rem;
-        max-width: 96vw;
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
       }
-      h1 { font-size: 1.55rem; }
-      .intro { font-size: 1rem; }
-      .section-title { font-size: 1.05rem; }
+      nav.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-top: 2rem;
+      }
+      .hero-text, .hero-image {
+        width: 100%;
+      }
+      .hero-text {
+        order: 2;
+      }
+      .hero-image {
+        order: 1;
+        margin-bottom: 1rem;
+        aspect-ratio: auto;
+      }
+
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- PHOTO SECTION -->
-    <img class="avatar" src="Profile.jpg" alt="Your photo">
-    <h1>Mathieu MICHEL</h1>
-    <p class="intro">
-    <p>This is my personal page. I am centralizing some activities here, and trying out basic webdesign.
+  <header>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <nav>
+      <a href="#top">Home</a>
+      <a href="#proj">Projects</a>
+      <a href="#about">Experience</a>
+      <!-- <a href="#blog">Blogging</a>
+      <a href="#blog">Check this out!</a> -->
+    </nav>
+  </header>
 
-    More technical work and code available at <a href="https://github.com/Mathieu-MICHEL">https://github.com/Mathieu-MICHEL</a>.</p>
-    <a class="button-accent" href="MICHEL_Resume_202505.pdf" target="_blank">Download Resume</a>
-    </p>
-    <!-- SKILLS -->
-    <div class="section-title">Skills</div>
-    <ul class="skills-list">
-      <li class="skill-item">
-        <div class="skill-label">R & Python<span>60%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar" data-level="60"></div></div>
-      </li>
-      <li class="skill-item">
-        <div class="skill-label">Excel & Power BI<span>50%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar" data-level="50"></div></div>
-      </li>
-      <li class="skill-item">
-        <div class="skill-label">Program Management<span>40%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar" data-level="40"></div></div>
-      </li>
-      <!-- Add more skills as needed -->
-    </ul>
+  <div id="home" class="hero">
+    <div class="hero-text">
+      <h1>Hi, I am Mathieu MICHEL</h1>
+      <p class="intro">This is my personal page, I am into data, international cooperation, and economic development questions.
+         I centralize some work here, featuring selected projects, experience summary, blogging samples and references to things I like. 
+         More technical work and code available at <a href="https://github.com/Mathieu-MICHEL" target="_blank">https://github.com/Mathieu-MICHEL</a>.</p>
+      <a class="button-accent" href="MICHEL_Resume_202505.pdf" target="_blank">Download Resume</a>
+    </div>
+    <div class="hero-image">
+      <img src="Profile.jpg" alt="Mathieu MICHEL">
+    </div>
+  </div>
 
-    <div class="section-title">Professional Projects</div>
+  <section id="proj">
+    <div class="section-title">Selected Projects</div>
     <ul class="projects">
       <li>
-        <a href="https://lagoslmis.ng" target="_blank">Lagos State Labour Market Information System</a><br>
-        <small>A project of public data and public-private exchange around Employment Information, mandated by Lagos State with support from GIZ.</small>
+        <a href="https://lagoslmis.ng" target="_blank">Lagos State Labour Market Information System</a>
+        <small>Public data platform and employment information exchange (Lagos State + GIZ).</small>
       </li>
       <li>
-        <a href="https://elearning.lsetf.ng" target="_blank">LSETF eLearning</a><br>
-        <small>Maintaining and developping a lean Moodle eLearning targetted at Lagosian jobseekers.</small>
+        <a href="https://elearning.lsetf.ng" target="_blank">LSETF eLearning</a>
+        <small>Lean Moodle deployment supporting jobseekers with soft skills training.</small>
       </li>
       <li>
-        <a href="https://randomstudiorw.com" target="_blank">Random STUDIO</a><br>
-        <small>Supporting a Rwandan interior design business.</small>
-      </li>
-      <!-- Add more projects as needed -->
-    </ul>
-
-    <!-- BLOG -->
-    <div class="section-title">Selected Blog Posts</div>
-    <ul class="blog-list">
-      <li>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7092554551668486144" height="719" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <a href="https://randomstudiorw.com" target="_blank">Random STUDIO</a>
+        <small>Interior design business support (Rwanda).</small>
       </li>
     </ul>
+  </section>
 
-    <!-- CONTACT -->
-    <div class="contact">
-      <a href="mailto:mathieu-michel@gmx.fr"><i class='fas fa-envelope-open' style='font-size:24px'></i></a>
-      <a href="https://www.linkedin.com/in/michel-gizxlsetf"><i class='fab fa-linkedin' style='font-size:24px'></i></a>
-      <a href="https://github.com/Mathieu-MICHEL"><i class="fab fa-github" style="font-size:24px"></i></a>
+  <section id="about">
+    <div class="section-title">Experience</div>
+    <div class="about">
+      <p>10+ years in project management, data systems, and development cooperation, focused on social utility.</p>
+      <p><strong>2020–Present:</strong> GIZ, – Technical Advisor (Rwanda) & Unit Head (secondment Nigeria)</p>
+      <p><strong>2016–2018:</strong> NGO – Program Manager (India)</p>
+      <p><strong>2011–2016:</strong> Private Sector – Data and Analyst Roles (France / Germany)</p>
+    </div>  
+    <div class="skills">
+      <p>R & Python | Excel & Power BI | Program Management</p>
     </div>
+  </section>
 
-<script>
-  // Animate skill bars
-  document.querySelectorAll('.skill-bar').forEach(function(bar) {
-    setTimeout(function() {
-      bar.style.width = bar.getAttribute('data-level') + '%';
-    }, 250);
-  });
-
-  // Toggle blog preview (only one open at a time)
-  document.querySelectorAll('.toggle-preview').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const preview = btn.nextElementSibling;
-      const isVisible = preview.style.display === 'block';
-
-      // Hide all previews
-      document.querySelectorAll('.blog-preview').forEach(div => {
-        div.style.display = 'none';
-      });
-
-      // Toggle this one
-      preview.style.display = isVisible ? 'none' : 'block';
-    });
-  });
-</script>
-
+  <footer>
+    <div class="footer-links"> 
+        <div>    
+        <a href="mailto:mathieu-michel@gmx.fr"><i class='fas fa-envelope-open'></i></a>
+        <a href="https://www.linkedin.com/in/michel-gizxlsetf"><i class='fab fa-linkedin'></i></a>
+        <a href="https://github.com/Mathieu-MICHEL"><i class="fab fa-github"></i></a>
+        &copy; 2025 Mathieu MICHEL
+        </div>
+    </div>
+  </footer>
 </body>
 </html>
