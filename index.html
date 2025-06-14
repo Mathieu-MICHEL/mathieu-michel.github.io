@@ -41,11 +41,11 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    .menu-toggle {
+    /* .menu-toggle {
       display: none;
       font-size: 1.5rem;
       cursor: pointer;
-    }
+    } */
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -228,16 +228,15 @@
     }
     @media (max-width: 768px) {
       nav {
-        display: none;
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
         width: 100%;
-        margin-top: 1rem;
       }
       nav.show {
         display: flex;
       }
       .menu-toggle {
-        display: block;
+        display: none;
       }
       .hero {
         flex-direction: column;
@@ -249,10 +248,10 @@
         width: 100%;
       }
       .hero-text {
-        order: 2;
+        order: 1;
       }
       .hero-image {
-        order: 1;
+        order: 2;
         margin-bottom: 1rem;
         aspect-ratio: auto;
       }
@@ -262,7 +261,7 @@
 </head>
 <body>
   <header>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <!-- <div class="menu-toggle"><i class="fas fa-bars"></i></div> -->
     <nav>
       <a href="#top">Home</a>
       <a href="#proj">Projects</a>
