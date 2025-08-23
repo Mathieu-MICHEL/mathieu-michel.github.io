@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
-      --primary: #171923;
-      --accent: #16a085;
-      --bg: #f5f7fa;
+      --primary: #17192389;
+      --accent: #0b2db6a1;
+      --bg: #f5f7fa12;
       --card-bg: #fff;
       --radius: 18px;
       --shadow: 0 4px 24px 0 rgba(22,160,133,.07);
@@ -133,11 +133,11 @@
         line-height: 20px; } 
       blockquote { 
         font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
-        font-size: 21px; 
+        font-size: 14px; 
         font-style: normal; 
         font-variant: normal; 
-        font-weight: 400; 
-        line-height: 30px; } 
+        font-weight: 200; 
+        line-height: 20px; } 
       pre { 
         font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
         font-size: 13px; 
@@ -169,14 +169,14 @@
       display: inline-block;
     }
     .button-accent:hover {
-      background: #13896b;
+      background: #0b2db6d8;
       transform: translateY(-2px) scale(1.03);
     }
     .section-title {
       font-size: 1.15rem;
       color: var(--accent);
       font-weight: 600;
-      margin: 2em 0 0.6em 5%;
+      margin: 0em 0 0.6em 5%;
       letter-spacing: 1px;
       text-transform: uppercase;
       font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
@@ -186,11 +186,11 @@
       line-height: 36px; 
     }
     section {
-      margin-bottom: 4rem;
+      padding: 2rem 0;   /* equal top & bottom padding */
+      margin: 0;         /* remove margin that caused imbalance */
     }
-    section#proj {
-      background-color: #f0f8f7;
-      padding: 2rem 0;
+    section#proj, section#blog {
+      background-color: #bddbf336;
     }
     .projects {
       width: 100%;
@@ -226,6 +226,23 @@
       margin: 0 auto;
       text-align: center;
     }
+    .post {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
+      font-size: 14px; 
+      font-style: normal; 
+      font-variant: normal; 
+      font-weight: 400; 
+      line-height: 20px; 
+    }
+    .post blockquote {
+      margin: 1em 0;     /* vertical spacing only */
+      padding-left: 1em; /* optional: slight indent if you want */
+      border-left: 3px solid var(--accent); /* optional: stylized quote */
+    }
+
     @media (max-width: 768px) {
       nav {
         display: flex;
@@ -267,8 +284,8 @@
       <a href="#top">Home</a>
       <a href="#proj">Projects</a>
       <a href="#about">Experience</a>
-      <!-- <a href="#blog">Blogging</a>
-      <a href="#blog">Check this out!</a> -->
+      <a href="#blog">Blogging</a>
+      <!-- <a href="#blog">Check this out!</a> -->
     </nav>
   </header>
 
@@ -277,6 +294,7 @@
       <h1>Hi, I am Mathieu MICHEL</h1>
       <p class="intro">This is my personal page, I am into data, international cooperation, and economic development questions.
          I centralize some work here, featuring selected projects, experience summary, blogging samples and references to things I like. 
+         <br> 
          More technical work and code available at <a href="https://github.com/Mathieu-MICHEL" target="_blank">https://github.com/Mathieu-MICHEL</a>.</p>
       <a class="button-accent" href="MICHEL_Resume_202505.pdf" target="_blank">Download Resume</a>
     </div>
@@ -307,12 +325,35 @@
     <div class="section-title">Experience</div>
     <div class="about">
       <p>10+ years in project management, data systems, and development cooperation, focused on social utility.</p>
-      <p><strong>2020–Present:</strong> GIZ, – Technical Advisor (Rwanda) & Unit Head (secondment Nigeria)</p>
-      <p><strong>2016–2018:</strong> NGO – Program Manager (India)</p>
-      <p><strong>2011–2016:</strong> Private Sector – Data and Analyst Roles (France / Germany)</p>
+      <p><strong>2020–Present:</strong> GIZ – Development Advisor (Rwanda), Integrated Expert (secondment Nigeria)</p>
+      <p><strong>2016–2018:</strong> Microfinance NGO – Program Manager (India)</p>
+      <p><strong>2011–2016:</strong> Insurance Sector – Data Analyst (France / Germany)</p>
     </div>  
     <div class="skills">
       <p>R & Python | Excel & Power BI | Program Management</p>
+    </div>
+
+  <section id="blog">
+    <div class="section-title">Blogging</div>
+    <div class="post">
+      <a href="https://www.goodreads.com/book/show/212924295-jacaranda" style="float: left; padding-right: 20px">
+        <img border="0" alt="Jacaranda" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1727187221l/212924295._SX98_.jpg" />
+      </a>
+      <a href="https://www.goodreads.com/book/show/212924295-jacaranda">Jacaranda</a> by 
+      <a href="https://www.goodreads.com/author/show/15369590.Ga_l_Faye">Gaël Faye</a><br>
+      My rating: <a href="https://www.goodreads.com/review/show/7845517581">4 of 5 stars</a><br>
+      <i>[lu en français]</i><br>
+        Gaël Faye revient à l'écriture et dévoile à ses lectrices et lecteurs, personnage après personnage, le génocide contre les Tutsis. 
+        Comme dans <a href="https://www.goodreads.com/book/show/30631883.Petit_pays" title="Petit pays by Gaël Faye" rel="nofollow noopener">Petit pays</a>, 
+        l'angle narratif est personnel, peut-être en partie autobiographique mais, cette fois, illustre au delà du narrateur l'impact du génocide sur la société Rwandaise, 
+        les survivants et les nouvelles générations. Faye est pudique et les dialogues sont simples, ce qui nous laisse face à l'histoire, pesante, dure, atroce. 
+        Une lecture touchante, et utile pour aborder le Rwanda actuel.<br>
+
+      <blockquote>"The past is never dead. It's not even past."<br>
+        Faulkner, <a href="https://www.goodreads.com/book/show/1008839.Requiem_for_a_Nun" title="Requiem for a Nun by William Faulkner" rel="nofollow noopener">Requiem for a Nun</a>
+      </blockquote>
+
+      <a href="https://www.goodreads.com/review/list/187251579-mathieu">View all my reviews</a>
     </div>
   </section>
 
