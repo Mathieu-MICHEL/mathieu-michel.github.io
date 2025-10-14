@@ -1,11 +1,18 @@
+<!-- /mnt/data/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mathieu MICHEL – Portfolio</title>
+  <meta name="description" content="Portfolio of Mathieu MICHEL — data, international cooperation, economic development, selected projects, experience, and blog notes." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
   <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <style>
     :root {
       --primary: #17192389;
@@ -14,42 +21,68 @@
       --card-bg: #fff;
       --radius: 18px;
       --shadow: 0 4px 24px 0 rgba(22,160,133,.07);
+      /* Header height: DESKTOP */
+      --header-h: 96px;
+      /* Footer padding bottom area */
+      --footer-pad: 80px;
     }
+
     html { box-sizing: border-box; scroll-behavior: smooth; }
-    *, *:before, *:after { box-sizing: inherit; }
+    *, *::before, *::after { box-sizing: inherit; }
+
     body {
       background: var(--bg);
       font-family: 'Segoe UI', system-ui, sans-serif;
       color: var(--primary);
       margin: 0;
-      padding: 0;
-      padding-top: 100px;
-      padding-bottom: 80px;
+      /* Keep content clear of fixed header/footer */
+      padding: var(--header-h) 0 var(--footer-pad);
     }
+
+    /* Ensure anchor targets appear fully below the fixed header */
+    main[id], section[id] { scroll-margin-top: var(--header-h); }
+
+    /* Skip link for keyboard users */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: .5rem .75rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: .5rem;
+      z-index: 1001;
+    }
+
     header, footer {
       position: fixed;
       width: 100%;
       background: var(--card-bg);
       box-shadow: var(--shadow);
       z-index: 1000;
-      padding: 1rem;
     }
     header {
+      /* Make header height match the var exactly */
       top: 0;
+      height: var(--header-h);
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      gap: .5rem;
       flex-wrap: wrap;
     }
-    /* .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    } */
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-    }
+    nav { display: flex; flex-wrap: wrap; }
     nav a {
       font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
       margin: 0.5rem 1rem;
@@ -57,17 +90,18 @@
       color: var(--accent);
       font-weight: 600;
     }
-    nav a.active {
+    nav a.active,
+    nav a[aria-current="page"] {
       border-bottom: 2px solid var(--accent);
     }
+
     footer {
-      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
       bottom: 0;
       font-size: 0.9rem;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: flex; flex-direction: column; align-items: center;
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+      padding: 1rem;
     }
     .footer-links a {
       margin: 0 0.8em;
@@ -76,296 +110,234 @@
       text-decoration: underline;
       opacity: 0.88;
     }
-    .footer-links a:hover {
-      color: var(--accent);
-      opacity: 1;
-    }
+    .footer-links a:hover { color: var(--accent); opacity: 1; }
+
     .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       width: 100%;
-      height: calc(100vh - 180px);
+      /* Viewport height minus header + footer pad */
+      height: calc(100vh - (var(--header-h) + var(--footer-pad)));
       padding: 0 9%;
       background: var(--bg);
       box-sizing: border-box;
     }
-    .hero-text {
-      width: 60%;
-    }
-    .hero-image {
-      width: 25%;
-      aspect-ratio: 0.9/1;
-    }
+    .hero-text { width: 60%; }
+    .hero-image { width: 25%; aspect-ratio: 0.9/1; }
     .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 100%; height: 100%; object-fit: cover;
       border-radius: var(--radius);
       border: 3px solid var(--bg);
       box-shadow: 0 2px 16px 0 rgba(22,160,133,.15);
       background: #eee;
     }
-    
-      h1 { 
-        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
-        font-size: 30px; 
-        font-style: normal; 
-        font-variant: small-caps; 
-        font-weight: 100; 
-        line-height: 36px; 
-        margin: .25em 0 .08em 0;
-        letter-spacing: -1px;
-        text-align: left;} 
-      h3 { 
-        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
-        font-size: 14px; 
-        font-style: normal; 
-        font-variant: normal; 
-        font-weight: 700; 
-        line-height: 15.4px; } 
-      p { 
-        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
-        font-size: 14px; 
-        font-style: normal; 
-        font-variant: normal; 
-        font-weight: 400; 
-        line-height: 20px; } 
-      blockquote { 
-        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
-        font-size: 14px; 
-        font-style: normal; 
-        font-variant: normal; 
-        font-weight: 200; 
-        line-height: 20px; } 
-      pre { 
-        font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
-        font-size: 13px; 
-        font-style: normal; 
-        font-variant: normal; 
-        font-weight: 400; 
-        line-height: 18.5667px; }
 
-    .intro {
-      font-size: 1rem;
-      margin: 1em 0;
-      line-height: 1.6;
+    h1 {
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+      font-size: 30px;
+      font-variant: small-caps;
+      font-weight: 100;
+      line-height: 36px;
+      margin: .25em 0 .08em;
+      letter-spacing: -1px;
       text-align: left;
     }
+    h3 {
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+      font-size: 14px; font-weight: 700; line-height: 15.4px;
+    }
+    p, blockquote, pre {
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+    }
+    p       { font-size: 14px; line-height: 20px; }
+    blockquote { font-size: 14px; line-height: 20px; font-weight: 200; }
+    pre     { font-size: 13px; line-height: 18.5667px; }
+
+    .intro {
+      font-size: 1rem; margin: 1em 0; line-height: 1.6; text-align: left;
+    }
+
     .button-accent {
       font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      padding: 0.6em 1.5em;
-      font-size: 1.08rem;
-      font-weight: 500;
-      margin: 1em 0;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
+      background: var(--accent); color: #fff; border: none; border-radius: var(--radius);
+      padding: 0.6em 1.5em; font-size: 1.08rem; font-weight: 500; margin: 1em 0;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
       box-shadow: 0 2px 8px 0 rgba(22,160,133,.08);
-      text-decoration: none;
-      display: inline-block;
+      text-decoration: none; display: inline-block;
     }
-    .button-accent:hover {
-      background: #0b2db6d8;
-      transform: translateY(-2px) scale(1.03);
-    }
+    .button-accent:hover { background: #0b2db6d8; transform: translateY(-2px) scale(1.03); }
+
     .section-title {
-      font-size: 1.15rem;
-      color: var(--accent);
-      font-weight: 600;
-      margin: 0em 0 0.6em 5%;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
-      font-style: normal; 
-      font-variant: small-caps; 
-      font-weight: 100; 
-      line-height: 36px; 
+      font-size: 1.15rem; color: var(--accent); font-weight: 600;
+      margin: 0 0 0.6em 5%; letter-spacing: 1px; text-transform: uppercase;
+      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
+      font-variant: small-caps; font-weight: 100; line-height: 36px;
+      padding-top: 30px;
     }
-    section {
-      padding: 2rem 0;   /* equal top & bottom padding */
-      margin: 0;         /* remove margin that caused imbalance */
-    }
-    section#proj, section#blog {
-      background-color: #bddbf336;
-    }
+    section {margin: 0;}
+    section#proj, section#blog {background-color: #bddbf336;}
+
     .projects {
-      width: 100%;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 100%; list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; align-items: center;
     }
     .projects li {
       font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
-      width: 90%;
-      max-width: 900px;
-      margin-bottom: 1.5em;
-      background: var(--card-bg);
-      padding: 1.5em;
-      border-radius: var(--radius);
+      width: 90%; max-width: 900px; margin-bottom: 1.5em;
+      background: var(--card-bg); padding: 1.5em; border-radius: var(--radius);
       box-shadow: 0 2px 6px rgba(22,160,133,.05);
     }
     .projects a {
       font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif;
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: none;
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.4rem;
+      color: var(--accent); font-weight: 600; text-decoration: none; display: block;
+      font-size: 1.1rem; margin-bottom: 0.4rem;
     }
-    .about, .skills {
-      width: 90%;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .post {
-      width: 90%;
-      max-width: 900px;
-      margin: 0 auto;
-      font-family: Big Caslon, Book Antiqua, Palatino Linotype, Georgia, serif; 
-      font-size: 14px; 
-      font-style: normal; 
-      font-variant: normal; 
-      font-weight: 400; 
-      line-height: 20px; 
-    }
+
+    .about, .skills { width: 90%; max-width: 900px; margin: 0 auto; text-align: center; }
+
+    .post { width: 90%; max-width: 900px; margin: 0 auto; padding-bottom: 30px;}
     .post blockquote {
-      margin: 1em 0;     /* vertical spacing only */
-      padding-left: 1em; /* optional: slight indent if you want */
-      border-left: 3px solid var(--accent); /* optional: stylized quote */
+      margin: 1em 0; padding-left: 1em; border-left: 3px solid var(--accent);
     }
 
-    @media (max-width: 768px) {
-      nav {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-      }
-      nav.show {
-        display: flex;
-      }
-      .menu-toggle {
-        display: none;
-      }
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding-top: 2rem;
-      }
-      .hero-text {
-        width: 100%;
-      }
-      .hero-text {
-        order: 1;
-      }
-      .hero-image {
-        order: 2;
-        margin-bottom: 1rem;
-        aspect-ratio: auto;
-        width: 66%;
-      }
+    /* Replaces inline style on blog cover */
+    .book-cover { float: left; padding-right: 20px; }
 
+    /* MOBILE breakpoint: tighter header → smaller offset */
+    @media (max-width: 768px) {
+      :root { --header-h: 72px; } /* tune as needed for your device */
+      header { padding: 0 .75rem; }
+      nav { display: flex; flex-direction: row; width: 100%; }
+      .hero { flex-direction: column; text-align: center; height: auto; padding-top: 2rem; }
+      .hero-text { width: 100%; order: 1; }
+      .hero-image { order: 2; margin-bottom: 1rem; aspect-ratio: auto; width: 66%; }
+      .book-cover { float: none; display: inline-block; padding-right: 0; margin-bottom: .75rem; }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <!-- <div class="menu-toggle"><i class="fas fa-bars"></i></div> -->
-    <nav>
-      <a href="#top">Home</a>
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Primary">
+      <a href="#home">Home</a>
       <a href="#proj">Projects</a>
       <a href="#about">Experience</a>
       <a href="#blog">Blogging</a>
-      <!-- <a href="#blog">Check this out!</a> -->
     </nav>
   </header>
 
-  <div id="home" class="hero">
+  <main id="home" class="hero" role="main">
     <div class="hero-text">
       <h1>Hi, I am Mathieu MICHEL</h1>
-      <p class="intro">This is my personal page, I am into data, international cooperation, and economic development questions.
-         I centralize some work here, featuring selected projects, experience summary, blogging samples and references to things I like. 
-         <br> 
-         More technical work and code available at <a href="https://github.com/Mathieu-MICHEL" target="_blank">https://github.com/Mathieu-MICHEL</a>.</p>
-      <a class="button-accent" href="MICHEL_Resume_202505.pdf" target="_blank">Download Resume</a>
+      <p class="intro">
+        This is my personal page, I am into data, international cooperation, and economic development.<br> 
+        I centralize some work here, featuring selected projects, experience summary, blogging samples and references to things I like.<br>
+        More technical work and code available at
+        <a href="https://github.com/Mathieu-MICHEL" target="_blank" rel="noopener noreferrer">https://github.com/Mathieu-MICHEL</a>.
+      </p>
+      <a class="button-accent" href="MICHEL_Resume_202505.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
     </div>
     <div class="hero-image">
-      <img src="Profile.jpg" alt="Mathieu MICHEL">
+      <img src="Profile.jpg" alt="Portrait photo of Mathieu MICHEL"
+           width="800" height="900" loading="lazy" decoding="async">
     </div>
-  </div>
+  </main>
 
-  <section id="proj">
-    <div class="section-title">Selected Projects</div>
+  <section id="proj" aria-labelledby="proj-title">
+    <div class="section-title" id="proj-title">Selected Projects</div>
     <ul class="projects">
       <li>
-        <a href="https://lagoslmis.ng" target="_blank">Lagos State Labour Market Information System</a>
+        <a href="https://lagoslmis.ng" target="_blank" rel="noopener noreferrer">Lagos State Labour Market Information System</a>
         <small>Public data platform and employment information exchange (Lagos State + GIZ).</small>
       </li>
       <li>
-        <a href="https://elearning.lsetf.ng" target="_blank">LSETF eLearning</a>
+        <a href="https://elearning.lsetf.ng" target="_blank" rel="noopener noreferrer">LSETF eLearning</a>
         <small>Lean Moodle deployment supporting jobseekers with soft skills training.</small>
       </li>
       <li>
-        <a href="https://randomstudiorw.com" target="_blank">Random STUDIO</a>
+        <a href="https://randomstudiorw.com" target="_blank" rel="noopener noreferrer">Random STUDIO</a>
         <small>Interior design business support (Rwanda).</small>
       </li>
     </ul>
   </section>
 
-  <section id="about">
-    <div class="section-title">Experience</div>
+  <section id="about" aria-labelledby="about-title">
+    <div class="section-title" id="about-title">Experience</div>
     <div class="about">
       <p>10+ years in project management, data systems, and development cooperation, focused on social utility.</p>
-      <p><strong>2020–Present:</strong> GIZ – Development Advisor (Rwanda), Integrated Expert (secondment Nigeria)</p>
+      <p><strong>2020–Present:</strong> GIZ – Development Advisor (partnership UNHCR, Rwanda), Integrated Expert (secondment Lagos State, Nigeria)</p>
       <p><strong>2016–2018:</strong> Microfinance NGO – Program Manager (India)</p>
       <p><strong>2011–2016:</strong> Insurance Sector – Data Analyst (France / Germany)</p>
-    </div>  
-    <div class="skills">
-      <p>R & Python | Excel & Power BI | Program Management</p>
     </div>
-
-  <section id="blog">
-    <div class="section-title">Blogging</div>
-    <div class="post">
-      <a href="https://www.goodreads.com/book/show/212924295-jacaranda" style="float: left; padding-right: 20px">
-        <img border="0" alt="Jacaranda" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1727187221l/212924295._SX98_.jpg" />
-      </a>
-      <a href="https://www.goodreads.com/book/show/212924295-jacaranda">Jacaranda</a> by 
-      <a href="https://www.goodreads.com/author/show/15369590.Ga_l_Faye">Gaël Faye</a><br>
-      My rating: <a href="https://www.goodreads.com/review/show/7845517581">4 of 5 stars</a><br>
-      <i>[lu en français]</i><br>
-        Gaël Faye revient à l'écriture et dévoile à ses lectrices et lecteurs, personnage après personnage, le génocide contre les Tutsis. 
-        Comme dans <a href="https://www.goodreads.com/book/show/30631883.Petit_pays" title="Petit pays by Gaël Faye" rel="nofollow noopener">Petit pays</a>, 
-        l'angle narratif est personnel, peut-être en partie autobiographique mais, cette fois, illustre au delà du narrateur l'impact du génocide sur la société Rwandaise, 
-        les survivants et les nouvelles générations. Faye est pudique et les dialogues sont simples, ce qui nous laisse face à l'histoire, pesante, dure, atroce. 
-        Une lecture touchante, et utile pour aborder le Rwanda actuel.<br>
-
-      <blockquote>"The past is never dead. It's not even past."<br>
-        Faulkner, <a href="https://www.goodreads.com/book/show/1008839.Requiem_for_a_Nun" title="Requiem for a Nun by William Faulkner" rel="nofollow noopener">Requiem for a Nun</a>
-      </blockquote>
-
-      <a href="https://www.goodreads.com/review/list/187251579-mathieu">View all my reviews</a>
+    <div class="skills">
+      <p>R &amp; Python | Excel &amp; Power BI | Program Management</p>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-links"> 
-        <div>    
-        <a href="mailto:mathieu-michel@gmx.fr"><i class='fas fa-envelope-open'></i></a>
-        <a href="https://www.linkedin.com/in/michel-gizxlsetf"><i class='fab fa-linkedin'></i></a>
-        <a href="https://github.com/Mathieu-MICHEL"><i class="fab fa-github"></i></a>
+  <section id="blog" aria-labelledby="blog-title">
+    <div class="section-title" id="blog-title">Blogging</div>
+    <div class="post">
+      <a class="book-cover" href="https://www.goodreads.com/book/show/212924295-jacaranda" target="_blank" rel="noopener noreferrer">
+        <img alt="Jacaranda book cover"
+             src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1727187221l/212924295._SX98_.jpg"
+             width="98" height="147" loading="lazy" decoding="async" />
+      </a>
+      <a href="https://www.goodreads.com/book/show/212924295-jacaranda" target="_blank" rel="noopener noreferrer">Jacaranda</a> by
+      <a href="https://www.goodreads.com/author/show/15369590.Ga_l_Faye" target="_blank" rel="noopener noreferrer">Gaël Faye</a><br>
+      My rating: <a href="https://www.goodreads.com/review/show/7845517581" target="_blank" rel="noopener noreferrer">4 of 5 stars</a><br>
+      <i>[lu en français]</i><br>
+      Gaël Faye revient à l'écriture et dévoile à ses lectrices et lecteurs, personnage après personnage, le génocide contre les Tutsis.
+      Comme dans <a href="https://www.goodreads.com/book/show/30631883.Petit_pays" title="Petit pays by Gaël Faye" rel="nofollow noopener" target="_blank" rel="noopener noreferrer">Petit pays</a>,
+      l'angle narratif est personnel, peut-être en partie autobiographique mais, cette fois, illustre au delà du narrateur l'impact du génocide sur la société Rwandaise,
+      les survivants et les nouvelles générations. Faye est pudique et les dialogues sont simples, ce qui nous laisse face à l'histoire, pesante, dure, atroce.
+      Une lecture touchante, et utile pour aborder le Rwanda actuel.<br>
+
+      <blockquote>
+        "The past is never dead. It's not even past."<br>
+        Faulkner, <a href="https://www.goodreads.com/book/show/1008839.Requiem_for_a_Nun" title="Requiem for a Nun by William Faulkner" rel="nofollow noopener" target="_blank" rel="noopener noreferrer">Requiem for a Nun</a>
+      </blockquote>
+
+      <a href="https://www.goodreads.com/review/list/187251579-mathieu" target="_blank" rel="noopener noreferrer">View all my reviews</a>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-links">
+      <div>
+        <a href="mailto:mathieu-michel@gmx.fr" aria-label="Email"><i class='fas fa-envelope-open' aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/michel-gizxlsetf" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class='fab fa-linkedin' aria-hidden="true"></i></a>
+        <a href="https://github.com/Mathieu-MICHEL" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
         &copy; 2025 Mathieu MICHEL
-        </div>
+      </div>
     </div>
   </footer>
+
+  <script>
+    // Minimal active link highlighting with IntersectionObserver
+    (function() {
+      const sections = document.querySelectorAll('main[id], section[id]');
+      const navLinks = Array.from(document.querySelectorAll('header nav a'));
+      const byId = id => navLinks.find(a => a.getAttribute('href') === `#${id}`);
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const link = byId(entry.target.id);
+          if (!link) return;
+          if (entry.isIntersecting) {
+            navLinks.forEach(a => { a.classList.remove('active'); a.removeAttribute('aria-current'); });
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+
+      sections.forEach(s => io.observe(s));
+    })();
+  </script>
 </body>
 </html>
